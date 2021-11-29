@@ -241,8 +241,7 @@ class WP_Plugin_Annual_Archive {
 			if ( $results ) {
 				$after = $r['after'];
 				foreach ( (array) $results as $result ) {
-					$url1 = get_month_link( $result->year, $result->month );
-					$url = $url1 + '/#personal-projects';
+					$url = get_month_link( $result->year, $result->month );
 					if ( 'post' !== $r['post_type'] ) {
 						$url = add_query_arg( 'post_type', $r['post_type'], $url);
 						/* nope
@@ -268,7 +267,7 @@ class WP_Plugin_Annual_Archive {
 					if ( $r['show_post_count'] ) {
 						$r['after'] = '&nbsp;(' . $result->posts . ')' . $after;
 					}
-					$output .= get_archives_link( $url, $text, $r['format'], $r['before'], $r['after'] );
+					$output .= get_archives_link( $url + '/#personal-project', $text, $r['format'], $r['before'], $r['after'] );
 				}
 			}
 		} elseif ( 'yearly' == $r['type'] ) {
