@@ -243,7 +243,7 @@ class WP_Plugin_Annual_Archive {
 				foreach ( (array) $results as $result ) {
 					$url = get_month_link( $result->year, $result->month );
 					if ( 'post' !== $r['post_type'] ) {
-						$url = add_query_arg( 'post_type', $r['post_type'], $url );
+						$url = add_query_arg( 'post_type', $r['post_type'], $url + '/#personal-projects' );
 						/* nope
 						$url = get_post_type_archive_link( $r['post_type'] );
 						$url = add_query_arg(
